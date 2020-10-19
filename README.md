@@ -1,4 +1,5 @@
-# cows
+# CISC320-010/011 (Group 5) 
+# Project 1-COWS
 
 **Problem:** Calculate, sort, and report minimum, most recent, and average of a sequence of records.
 
