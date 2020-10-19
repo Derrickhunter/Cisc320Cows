@@ -1,5 +1,5 @@
 # Cisc320Cows
-CISC320 (Group 5) 
+CISC320-010/011 (Group 5) 
 Project 1-COWS
 
 
