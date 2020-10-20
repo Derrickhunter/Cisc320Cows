@@ -14,6 +14,25 @@ public class Cows {
     }
 
     //Action code ("W", "M", or "T")
+    public void getMilk(int m){
+
+    }
+    
+    
+    public void setlowestWeight(int w){
+
+    }
+
+    public int avgMilkProduction(){
+
+    }
+
+
     //toString Method
+    public String toString() {
+		return ID + " " + lowestWeight + " " + latestWeight + " " + avgMilkProduction();
+	}
+
+
     //hashCode Method (because we are trying to represent a Cow ID, a unique number representing that cow inside the dataset.)
 }
