@@ -12,10 +12,21 @@ public class Main {
     }
 
     public static ArrayList<String> FileReader(String filename) {
-         File file = new File(filename);
-         BufferedReader reader = new BufferedReader(new FileReader(filename));
-         String string;
+            List<String> record = new ArrayList<String>();
+            try{
+                    BufferedReader reader = new BufferedReader(new FileReader(filename));
+                    String line;
+                    reader.readLine();
+                    while((line = reader.readLine()) != null){
+                            record.add(line);
+                    }
+                    reader.close();
+            } catch(Exception e){
+                    System.err.format("error");
+                    e.printStackTrace();
+            }
+
+            return record;
     }
 
 }
-
