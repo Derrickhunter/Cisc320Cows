@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main{
+public class Main {
+
+    public static void main(String args[])throws Exception{ 
+        FileReader input = new FileReader("cowstest/input1.txt");
     
-     /*
-    TODO:
-    1) enter main method
-    2) enter file reader
-    3) enter arrayList
-    */
 }
