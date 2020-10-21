@@ -1,4 +1,4 @@
-public class Cows {
+public class Cows implements Comparable<Cows> {
     String ID;
     int lowestWeight;
     int lastestWeight;
