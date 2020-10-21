@@ -8,9 +8,9 @@ public class Cows implements Comparable<Cows> {
     public Cows(String ID){
         this.ID = ID;
         this.latestWeight = 0;
-		this.lowestWeight = 0;
-		this.totalMilkings = 0;
-		this.numOfMilkings = 0;
+	this.lowestWeight = 0;
+	this.totalMilkings = 0;
+	this.numOfMilkings = 0;
     }
 
     //Action code ("W", "M", or "T")
