@@ -38,7 +38,6 @@ public class Cows implements Comparable<Cows> {
 	
 	/*
 	 * Returns the time 
-	 * 
 	 */
 	
 	public int getTimestamp() {
