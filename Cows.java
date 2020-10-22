@@ -73,4 +73,9 @@ public class Cows implements Comparable<Cows> {
 
 	// hashCode Method (because we are trying to represent a Cow ID, a unique number
 	// representing that cow inside the dataset.)
+
+    	@Override
+    	public int hashCode() {
+        	return ID.hashCode();
+    	}
 }
