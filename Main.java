@@ -7,7 +7,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String args[])throws Exception{ 
-        FileReader input = new FileReader("cowstest/input1.txt");
+    	Scanner scanner = new Scanner(System.in);
+		String filename = scanner.next();
+		scanner.close();
+		ArrayList<String> records = FileReader(filename);
+		
+		HashMap<String, Cows> cows = new HashMap<String,Cows>();
     
     }
 
