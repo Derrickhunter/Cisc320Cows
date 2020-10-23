@@ -1,12 +1,13 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
 
-	public static ArrayList<String> FileReader(String filename) {
+	public static List<String> FileReader(String filename) {
 		List<String> record = new ArrayList<String>();
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -27,7 +28,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		String filename = scanner.next();
 		scanner.close();
-		ArrayList<String> records = FileReader(filename);
+		List<String> record = FileReader(filename);
 		HashMap<String, Cows> cows = new HashMap<String, Cows>();
 		
 		String[] action = null;
@@ -35,7 +36,7 @@ public class Main {
 		for (int i = 1; i < record.size(); i++) {
 			action = record.get(i).split("\\s+");
 			if (!cows.containsKey(action[0])) {
-				cows.put(action[0], new Cow(action[0]));
+				cows.put(action[0], new Cows(action[0]));
 			}
 			Cows c = cows.get(action[0]);
 			if (action[1].equals("W")) {
