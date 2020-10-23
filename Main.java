@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-	String filename = "F:\\UDEL\\CISC 320\\CISC320PROJECT\\Cisc320Cows"
 
 	public static ArrayList<String> FileReader(String filename) {
 		List<String> record = new ArrayList<String>();
