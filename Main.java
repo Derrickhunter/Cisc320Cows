@@ -41,7 +41,7 @@ public class Main {
 			Cows c = cows.get(action[0]);
 			if (action[1].equals("W")) {
 				if(c.ID.equals(action[0])) {
-					c.setLowestWeight(Integer.parseInt(action[2]));
+					c.setlowestWeight(Integer.parseInt(action[2]));
 				}
 			}
 			if (action[1].equals("M")) {
