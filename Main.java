@@ -5,33 +5,66 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
+	String filename = "F:\\UDEL\\CISC 320\\CISC320PROJECT\\Cisc320Cows"
 
-    public static void main(String args[])throws Exception{ 
-    	Scanner scanner = new Scanner(System.in);
+	public static ArrayList<String> FileReader(String filename) {
+		List<String> record = new ArrayList<String>();
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(filename));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				record.add(line);
+			}
+			reader.close();
+		} catch (Exception e) {
+			System.err.format("Error occurred trying to read '%s'.", filename);
+			e.printStackTrace();
+		}
+
+		return record;
+	}
+
+	public static void main(String args[]) throws Exception {
+		Scanner scanner = new Scanner(System.in);
 		String filename = scanner.next();
 		scanner.close();
 		ArrayList<String> records = FileReader(filename);
+		HashMap<String, Cows> cows = new HashMap<String, Cows>();
 		
-		HashMap<String, Cows> cows = new HashMap<String,Cows>();
-    
-    }
-
-    public static ArrayList<String> FileReader(String filename) {
-            List<String> record = new ArrayList<String>();
-            try{
-                    BufferedReader reader = new BufferedReader(new FileReader(filename));
-                    String line;
-                    reader.readLine();
-                    while((line = reader.readLine()) != null){
-                            record.add(line);
-                    }
-                    reader.close();
-            } catch(Exception e){
-                    System.err.format("error");
-                    e.printStackTrace();
-            }
-
-            return record;
-    }
+		String[] action = null;
+		
+		for (int i = 1; i < record.size(); i++) {
+			action = record.get(i).split("\\s+");
+			if (!cows.containsKey(action[0])) {
+				cows.put(action[0], new Cow(action[0]));
+			}
+			Cows c = cows.get(action[0]);
+			if (action[1].equals("W")) {
+				if(c.ID.equals(action[0])) {
+					c.setLowestWeight(Integer.parseInt(action[2]));
+				}
+			}
+			if (action[1].equals("M")) {
+				if(c.ID.equals(action[0])) {
+					c.getMilk(Integer.parseInt(action[2]));
+				}
+			}
+			if(action[1].equals("T")) {
+				continue;
+			}
+		}
+		
+		ArrayList<Cows> sortedCows = new ArrayList<Cows>();
+		for (Cows c : cows.values()) {
+			if (c.latestWeight != 0 && c.lowestWeight != 0 && c.numOfMilkings != 0 && c.totalMilkings != 0) {
+				sortedCows.add(c);
+			}
+		}
+		
+		sortedCows.sort(null);
+		for (Cows c : sortedCows) {
+			System.out.println(c);
+		}
+	}
 
 }
