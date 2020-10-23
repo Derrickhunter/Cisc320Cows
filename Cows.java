@@ -96,3 +96,4 @@ public class Cows implements Comparable<Cows> {
 		return this.ID.equals(((Cows) cow).ID);
 	}
 }
+
