@@ -4,7 +4,7 @@ public class Cows implements Comparable<Cows> {
 	int latestWeight;// The latest weight of a cow
 	int totalMilkings; // Total amount of milk produced by the cow
 	int numOfMilkings;// Number of times a cow has been milked
-	int timeStamp;// Number representing when the record was made 
+	int timeStamp;// Number representing when the record was made
 
 	public Cows(String ID) {
 		this.ID = ID;
@@ -12,12 +12,12 @@ public class Cows implements Comparable<Cows> {
 		this.lowestWeight = 0;
 		this.totalMilkings = 0;
 		this.numOfMilkings = 0;
-		this.timeStamp =  100000;
+		this.timeStamp = 100000;
 	}
 
 	/*
-	 * Adds the number of milk produced. Increments the numOfMilks every time getMilk
-	 * is called
+	 * Adds the number of milk produced. Increments the numOfMilks every time
+	 * getMilk is called
 	 */
 	public void getMilk(int m) {
 		this.totalMilkings += m;
@@ -35,31 +35,30 @@ public class Cows implements Comparable<Cows> {
 		}
 		this.latestWeight = w;
 	}
-	
-	/*
-	 * Returns the time 
-	 */
-	
-	public int getTimestamp() {
-		return timeStamp;
-	}
-	
-	public void setTimestamp(int timestamp) {
-		this.timeStamp = timestamp;
-	}
 
 	/*
 	 * Returns the average milk produced by a cow If the cow was not milked returns
 	 * 0
 	 */
-	public int avgMilkProduction(){
-    	if (numOfMilkings == 0) {
-    		return 0;
-    	}
-    	else {
-    		return (totalMilkings / numOfMilkings);
-    	}
-    }
+	public int avgMilkProduction() {
+		if (numOfMilkings == 0) {
+			return 0;
+		} else {
+			return (totalMilkings / numOfMilkings);
+		}
+	}
+
+	/*
+	 * Returns the time
+	 */
+
+	public int getTimestamp() {
+		return timeStamp;
+	}
+
+	public void setTimestamp(int timestamp) {
+		this.timeStamp = timestamp;
+	}
 
 	// compareTo Method
 	public int compareTo(Cows c) {
@@ -88,8 +87,12 @@ public class Cows implements Comparable<Cows> {
 	// hashCode Method (because we are trying to represent a Cow ID, a unique number
 	// representing that cow inside the dataset.)
 
-    	@Override
-    	public int hashCode() {
-        	return ID.hashCode();
-    	}
+	@Override
+	public int hashCode() {
+		return ID.hashCode();
+	}
+	
+	public boolean equals(Object cow) {
+		return this.ID.equals(((Cows) cow).ID);
+	}
 }
