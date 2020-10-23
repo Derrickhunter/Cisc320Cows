@@ -9,4 +9,5 @@ For full credit, you must be able to justify your program's complexity as averag
 
 For project 1, the data structure we decided to use is a hashmap. A hashmap will allow us to store and maintain keys,
 which is the Cow's ID and able to retrieve that value later on. Rather than trying to constantly loop through, we implemented 
-a hashmap to pull keys and values which verifies that our program run on average time case O(c*log(c)+r).
+a hashmap to pull keys and values which verifies that our program run on average time case O(c*log(c)+r). Using a loop (O(c)), sort (O(c log(c))),
+and then put it all together with the average case O(1) with the characterization of O(r)--- this solves the algorithm of O(c*log(c)+r).
